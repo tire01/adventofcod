@@ -1,5 +1,6 @@
 ﻿open System.IO;
 open System;
+open System.Net
 
 // Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
 // See the 'F# Tutorial' project for more help.
@@ -11,13 +12,22 @@ let converToInt (value : string) : int = Convert.ToInt32(value)
 
 let oneIfGreater (pair : (int * int)) : int = match pair with a,b when a > b -> 1 | _ -> 0
 
-[<EntryPoint>]
-let main argv =
-    let data = readData(@".\Data.txt") |> Array.map converToInt |> Array.toSeq
-    let nextValue = data |> Seq.skip 1
-    let result = data |> Seq.zip nextValue |> Seq.map oneIfGreater |> Seq.sum
+let windowAvg (tuple : (int * int * int)) : int = match tuple with a,b,c -> (a + b + c) / 3 
 
-    printf $"{result}"
+let window (source : int[]) : seq<int * int * int> =
+   
+    
+
+    
+
+[<EntryPoint>]
+let main argv = 
+
+    let data = readData(@".\Data.txt") |> Array.map converToInt 
+
+    
+
+   // printf $"{result}"
     0 // return an integer exit code
 
    

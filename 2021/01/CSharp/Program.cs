@@ -19,9 +19,9 @@ namespace DayOneCSharp
 
             Console.WriteLine(answer);
         }
-
-
     }
+
+
     public static class TestDataHelper 
     {
         public static IEnumerable<int> GetData()
